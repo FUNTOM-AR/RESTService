@@ -1,3 +1,4 @@
+// seedData.js
 import fs from "node:fs/promises";
 import { pool } from "./databaseService.js";
 
@@ -6,18 +7,16 @@ async function readSeedJson() {
   const json = JSON.parse(raw);
 
   if (!Array.isArray(json.seedTables) || !Array.isArray(json.seedData)) {
-    throw new Error("Invalid seedData.json structure");
+    throw new Error("seedData.json must contain seedTables[] and seedData[]");
   }
 
   return json;
 }
 
-
 async function clearTables(conn, seedTables) {
   await conn.execute("SET FOREIGN_KEY_CHECKS = 0");
   try {
     for (const tableName of seedTables) {
-      if (typeof tableName !== "string" || !tableName.trim()) continue;
       await conn.execute(`DELETE FROM \`${tableName}\``);
       await conn.execute(`ALTER TABLE \`${tableName}\` AUTO_INCREMENT = 1`);
     }
@@ -27,11 +26,13 @@ async function clearTables(conn, seedTables) {
 }
 
 async function insertRecords(conn, tableName, records) {
-  if (!Array.isArray(records) || records.length === 0) return;
+  let inserted = 0;
+
+  if (!Array.isArray(records) || records.length === 0) {
+    return inserted;
+  }
 
   for (const record of records) {
-    if (!record || typeof record !== "object") continue;
-
     const columns = Object.keys(record);
     if (columns.length === 0) continue;
 
@@ -41,30 +42,30 @@ async function insertRecords(conn, tableName, records) {
 
     const sql = `INSERT INTO \`${tableName}\` (${colSql}) VALUES (${placeholders})`;
     await conn.execute(sql, values);
+    inserted++;
   }
-}
 
-async function seedAllData(conn, seedData) {
-  for (const entry of seedData) {
-    if (!entry || typeof entry !== "object") continue;
-
-    const tableName = entry.tableName;
-    const records = entry.records;
-
-    if (typeof tableName !== "string" || !tableName.trim()) continue;
-    await insertRecords(conn, tableName, records);
-  }
+  return inserted;
 }
 
 export async function seedDatabase() {
   const conn = await pool.getConnection();
+  const result = [];
+
   try {
     const { seedTables, seedData } = await readSeedJson();
 
     await conn.beginTransaction();
+
     await clearTables(conn, seedTables);
-    await seedAllData(conn, seedData);
+
+    for (const { tableName, records } of seedData) {
+      const count = await insertRecords(conn, tableName, records);
+      result.push({ tableName, recordCount: count });
+    }
+
     await conn.commit();
+    return result;
   } catch (err) {
     try {
       await conn.rollback();

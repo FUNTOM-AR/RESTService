@@ -4,7 +4,6 @@ export const seedTables = async (req, res) => {
   try {
     if (process.env.ALLOW_SEED_DATA !== "true") {
       return res.status(403).json({
-        success: false,
         message: "Seeding not allowed by environment configuration"
       });
     }
