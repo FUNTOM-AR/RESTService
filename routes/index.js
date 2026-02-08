@@ -9,10 +9,10 @@ import videoRecordingRoutes from "./videoRecordingRoutes.js";
 import achievementsRoutes from "./achievementRoutes.js";
 import arm3DRoutes from "./arm3DRoutes.js";
 import therapistNotesRoutes from "./therapistNotesRoutes.js";
-import seedRoutes from "./seedRoutes.js";
+import database from "./seedRoutes.js";
 
 const router = express.Router();
-router.use("/", seedRoutes);
+router.use("/", database);
 router.use("/therapists", therapistRoutes);
 router.use("/patients", patientRoutes);
 router.use("/masterTaskTable", masterTaskTableRoutes);

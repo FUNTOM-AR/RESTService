@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { seedTables } from "../controllers/seedController.js";
+import { runSeed } from "../controllers/seedController.js";
 
 const router = Router();
 
-router.post("/seed", seedTables);
+router.post("/seed", runSeed);
 
 export default router;
