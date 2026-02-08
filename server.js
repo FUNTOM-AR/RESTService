@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 if (process.env.USE_SEED === "true") {
-  await import("./services/database/seed_schema.js");
+  await import("./services/database/seedSchema.js");
 }
 
 const app = express();
