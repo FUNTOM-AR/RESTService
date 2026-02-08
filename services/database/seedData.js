@@ -1,4 +1,3 @@
-// seedData.js
 import fs from "node:fs/promises";
 import { pool } from "./databaseService.js";
 
