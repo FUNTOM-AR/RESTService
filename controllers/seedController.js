@@ -1,9 +1,8 @@
-// seedController.js
-import { seedDatabase } from "../services/database/seed_data.js";
+import { seedTables } from "../services/database/seed_data.js";
 
 export const runSeed = async (req, res) => {
   try {
-    const result = await seedDatabase();
+    const result = await seedTables();
     res.status(200).json({
       message: "Database seeded successfully",
       inserted: result
