@@ -2,11 +2,11 @@ import express from "express";
 
 import therapistRoutes from "./therapistRoutes.js";
 import patientRoutes from "./patientRoutes.js";
-import masterTaskTableRoutes from "./masterTaskTableRoutes.js";
+import masterTaskTableRoutes from "./masterTaskRoutes.js";
 import patientTaskAssignmentRoutes from "./patientTaskAssignmentRoutes.js";
 import taskSessionRoutes from "./taskSessionRoutes.js";
 import videoRecordingRoutes from "./videoRecordingRoutes.js";
-import achievementsRoutes from "./achievementsRoutes.js";
+import achievementsRoutes from "./achievementRoutes.js";
 import arm3DRoutes from "./arm3DRoutes.js";
 import therapistNotesRoutes from "./therapistNotesRoutes.js";
 
