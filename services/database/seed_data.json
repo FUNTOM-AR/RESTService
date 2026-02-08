@@ -1,0 +1,33 @@
+{
+  "therapists": [
+    { "name": "Dr. Adam", "email": "adam@test.com", "password": "1234" }
+  ],
+  "patients": [
+    {
+      "name": "Ali",
+      "email": "ali@test.com",
+      "password": "1234",
+      "amputation_type": "below_elbow",
+      "start_date": "2026-02-01",
+      "therapist_email": "adam@test.com"
+    }
+  ],
+  "tasks": [
+    { "task_name": "Grip", "description": "Grip hand", "difficulty_default": "easy", "time_limit": 60 }
+  ],
+  "assignments": [
+    { "patient_email": "ali@test.com", "task_name": "Grip", "status": "pending" }
+  ],
+  "sessions": [
+    { "patient_email": "ali@test.com", "task_name": "Grip", "completion_percentage": 50 }
+  ],
+  "achievements": [
+    { "patient_email": "ali@test.com", "title": "First Task", "description": "Completed first task" }
+  ],
+  "arms": [
+    { "patient_email": "ali@test.com", "Curl": 1, "Spread": 1 }
+  ],
+  "notes": [
+    { "patient_email": "ali@test.com", "therapist_email": "adam@test.com", "note_text": "Good progress" }
+  ]
+}

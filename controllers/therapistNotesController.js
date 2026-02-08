@@ -1,4 +1,4 @@
-import { pool } from "../services/databaseService.js";
+import { pool } from "../services/database/databaseService.js";
 
 export async function getNotes(req,res){
   const [rows]=await pool.query("SELECT * FROM TherapistNotes");
