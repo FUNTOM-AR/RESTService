@@ -12,11 +12,11 @@ export async function getPatients(req, res) {
 
 export async function createPatient(req, res) {
   try {
-    const { name, email, password, amputation_type, start_date, therapist_id } = req.body;
+    const { name,  amputation_type, start_date, therapist_id } = req.body;
 
     const [result] = await pool.query(
-      "INSERT INTO Patient (name,email,password,amputation_type,start_date,therapist_id) VALUES (?,?,?,?,?,?)",
-      [name, email, password, amputation_type, start_date, therapist_id]
+      "INSERT INTO Patient (name, amputation_type,start_date,therapist_id) VALUES (?,?,?,?,?,?)",
+      [name,  amputation_type, start_date, therapist_id]
     );
 
     // Fetch the inserted patient
@@ -35,9 +35,9 @@ export async function createPatient(req, res) {
 
 export async function updatePatient(req, res) {
   try {
-    const { name, email, password, amputation_type, start_date, therapist_id } = req.body;
+    const { name, amputation_type, start_date, therapist_id } = req.body;
 
-    const picked = { name, email, password, amputation_type, start_date, therapist_id };
+    const picked = { name, amputation_type, start_date, therapist_id };
     const cleaned = Object.fromEntries(
       Object.entries(picked).filter(([, v]) => v !== undefined)
     );

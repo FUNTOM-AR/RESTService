@@ -11,7 +11,8 @@ const expectedTables = [
   "TherapistNotes",
   "MasterTaskTable",
   "Patient",
-  "Therapist"
+  "Therapist",
+  "User"
 ];
 
 // Function to check if any expected table is missing
@@ -55,40 +56,54 @@ export async function seedSchema() {
   await q(`DROP TABLE IF EXISTS \`MasterTaskTable\``);
   await q(`DROP TABLE IF EXISTS \`Patient\``);
   await q(`DROP TABLE IF EXISTS \`Therapist\``);
+  await q(`DROP TABLE IF EXISTS \`User\``);
 
   await q(`SET FOREIGN_KEY_CHECKS = 1`);
 
-  // Then create all tables exactly as in your original script
-  // Therapist
-  await q(`
-    CREATE TABLE \`Therapist\` (
-      \`therapist_id\` INT NOT NULL AUTO_INCREMENT,
-      \`name\` VARCHAR(255) NOT NULL,
-      \`email\` VARCHAR(255) NOT NULL,
-      \`password\` VARCHAR(255) NOT NULL,
-      PRIMARY KEY (\`therapist_id\`),
-      UNIQUE KEY \`uq_therapist_email\` (\`email\`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
-  `);
+// User table
+await q(`
+  CREATE TABLE \`User\` (
+    \`user_id\` INT NOT NULL AUTO_INCREMENT,
+    \`email\` VARCHAR(255) NOT NULL,
+    \`password\` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (\`user_id\`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`);
 
-  // Patient
-  await q(`
-    CREATE TABLE \`Patient\` (
-      \`patient_id\` INT NOT NULL AUTO_INCREMENT,
-      \`name\` VARCHAR(255) NOT NULL,
-      \`email\` VARCHAR(255) NOT NULL,
-      \`password\` VARCHAR(255) NOT NULL,
-      \`amputation_type\` ENUM('below_elbow','above_elbow','shoulder') NOT NULL,
-      \`start_date\` DATE NULL,
-      \`therapist_id\` INT NULL,
-      PRIMARY KEY (\`patient_id\`),
-      UNIQUE KEY \`uq_patient_email\` (\`email\`),
-      KEY \`idx_patient_therapist\` (\`therapist_id\`),
-      CONSTRAINT \`fk_patient_therapist\`
-        FOREIGN KEY (\`therapist_id\`) REFERENCES \`Therapist\`(\`therapist_id\`)
-        ON DELETE SET NULL ON UPDATE CASCADE
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
-  `);
+// Therapist table (linked to User)
+await q(`
+  CREATE TABLE \`Therapist\` (
+    \`therapist_id\` INT NOT NULL AUTO_INCREMENT,
+    \`user_id\` INT NOT NULL,
+    \`name\` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (\`therapist_id\`),
+    UNIQUE KEY \`uq_therapist_user\` (\`user_id\`),
+    CONSTRAINT \`fk_therapist_user\`
+      FOREIGN KEY (\`user_id\`) REFERENCES \`User\`(\`user_id\`)
+      ON DELETE CASCADE ON UPDATE CASCADE
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`);
+
+// Patient table (linked to User)
+await q(`
+  CREATE TABLE \`Patient\` (
+    \`patient_id\` INT NOT NULL AUTO_INCREMENT,
+    \`user_id\` INT NOT NULL,
+    \`name\` VARCHAR(255) NOT NULL,
+    \`amputation_type\` ENUM('below_elbow','above_elbow','shoulder') NOT NULL,
+    \`start_date\` DATE NULL,
+    \`therapist_id\` INT NULL,
+    PRIMARY KEY (\`patient_id\`),
+    UNIQUE KEY \`uq_patient_user\` (\`user_id\`),
+    KEY \`idx_patient_therapist\` (\`therapist_id\`),
+    CONSTRAINT \`fk_patient_user\`
+      FOREIGN KEY (\`user_id\`) REFERENCES \`User\`(\`user_id\`)
+      ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT \`fk_patient_therapist\`
+      FOREIGN KEY (\`therapist_id\`) REFERENCES \`Therapist\`(\`therapist_id\`)
+      ON DELETE SET NULL ON UPDATE CASCADE
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+`);
 
  // MasterTaskTable
   await q(`
