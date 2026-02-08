@@ -1,5 +1,12 @@
 import express from "express";
 import routes from "./routes/index.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+if (process.env.USE_SEED === "true") {
+  await import("./services/database/seed_schema.js");
+}
 
 const app = express();
 const PORT = 3000;

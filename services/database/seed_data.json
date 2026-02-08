@@ -1,6 +1,8 @@
 {
   "therapists": [
-    { "name": "Dr. Adam", "email": "adam@test.com", "password": "1234" }
+    { "name": "Dr. Adam", "email": "adam@test.com", "password": "1234" },
+    { "name": "Dr. Sarah", "email": "sarah@test.com", "password": "1234" },
+    { "name": "Dr. Omar", "email": "omar@test.com", "password": "1234" }
   ],
   "patients": [
     {
@@ -10,24 +12,57 @@
       "amputation_type": "below_elbow",
       "start_date": "2026-02-01",
       "therapist_email": "adam@test.com"
+    },
+    {
+      "name": "Lina",
+      "email": "lina@test.com",
+      "password": "1234",
+      "amputation_type": "above_elbow",
+      "start_date": "2026-02-02",
+      "therapist_email": "sarah@test.com"
+    },
+    {
+      "name": "Hassan",
+      "email": "hassan@test.com",
+      "password": "1234",
+      "amputation_type": "shoulder",
+      "start_date": "2026-02-03",
+      "therapist_email": "omar@test.com"
     }
   ],
   "tasks": [
-    { "task_name": "Grip", "description": "Grip hand", "difficulty_default": "easy", "time_limit": 60 }
+    { "task_name": "Grip", "description": "Grip hand", "difficulty_default": "easy", "time_limit": 60 },
+    { "task_name": "Rotate", "description": "Rotate wrist", "difficulty_default": "medium", "time_limit": 90 },
+    { "task_name": "Lift", "description": "Lift object", "difficulty_default": "hard", "time_limit": 120 },
+    { "task_name": "Pinch", "description": "Pinch fingers", "difficulty_default": "easy", "time_limit": 45 }
   ],
   "assignments": [
-    { "patient_email": "ali@test.com", "task_name": "Grip", "status": "pending" }
+    { "patient_email": "ali@test.com", "task_name": "Grip", "status": "pending" },
+    { "patient_email": "ali@test.com", "task_name": "Rotate", "status": "in_progress" },
+    { "patient_email": "lina@test.com", "task_name": "Grip", "status": "completed" },
+    { "patient_email": "lina@test.com", "task_name": "Lift", "status": "pending" },
+    { "patient_email": "hassan@test.com", "task_name": "Pinch", "status": "pending" }
   ],
   "sessions": [
-    { "patient_email": "ali@test.com", "task_name": "Grip", "completion_percentage": 50 }
+    { "patient_email": "ali@test.com", "task_name": "Grip", "completion_percentage": 40 },
+    { "patient_email": "ali@test.com", "task_name": "Rotate", "completion_percentage": 60 },
+    { "patient_email": "lina@test.com", "task_name": "Grip", "completion_percentage": 100 },
+    { "patient_email": "lina@test.com", "task_name": "Lift", "completion_percentage": 20 },
+    { "patient_email": "hassan@test.com", "task_name": "Pinch", "completion_percentage": 10 }
   ],
   "achievements": [
-    { "patient_email": "ali@test.com", "title": "First Task", "description": "Completed first task" }
+    { "patient_email": "ali@test.com", "title": "Started Rehab", "description": "Completed first session" },
+    { "patient_email": "lina@test.com", "title": "Full Grip", "description": "Completed grip task" },
+    { "patient_email": "hassan@test.com", "title": "First Try", "description": "Attempted first task" }
   ],
   "arms": [
-    { "patient_email": "ali@test.com", "Curl": 1, "Spread": 1 }
+    { "patient_email": "ali@test.com", "Curl": 1, "Spread": 1 },
+    { "patient_email": "lina@test.com", "Curl": 0, "Spread": 1 },
+    { "patient_email": "hassan@test.com", "Curl": 1, "Spread": 0 }
   ],
   "notes": [
-    { "patient_email": "ali@test.com", "therapist_email": "adam@test.com", "note_text": "Good progress" }
+    { "patient_email": "ali@test.com", "therapist_email": "adam@test.com", "note_text": "Good start" },
+    { "patient_email": "lina@test.com", "therapist_email": "sarah@test.com", "note_text": "Needs more strength" },
+    { "patient_email": "hassan@test.com", "therapist_email": "omar@test.com", "note_text": "Very early stage" }
   ]
 }
