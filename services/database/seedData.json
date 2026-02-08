@@ -1,0 +1,501 @@
+{
+  "seedTables": ["Therapist", "Patient", "MasterTaskTable", "PatientTaskAssignment", "TaskSession", "VideoRecording", "Achievements", "3D_ARM", "TherapistNotes"],
+  "seedData": [
+    {
+      "tableName": "Therapist",
+      "records": [
+        { "therapist_id": 1, "name": "Dr. Maya Khoury", "email": "maya.khoury@clinic.test", "password": "pass123" },
+        { "therapist_id": 2, "name": "Dr. Karim Haddad", "email": "karim.haddad@clinic.test", "password": "pass123" },
+        { "therapist_id": 3, "name": "Dr. Rania Saad", "email": "rania.saad@clinic.test", "password": "pass123" },
+        { "therapist_id": 4, "name": "Dr. Jad Nassar", "email": "jad.nassar@clinic.test", "password": "pass123" },
+        { "therapist_id": 5, "name": "Dr. Nour Salameh", "email": "nour.salameh@clinic.test", "password": "pass123" },
+        { "therapist_id": 6, "name": "Dr. Elie Farah", "email": "elie.farah@clinic.test", "password": "pass123" },
+        { "therapist_id": 7, "name": "Dr. Hala Mansour", "email": "hala.mansour@clinic.test", "password": "pass123" },
+        { "therapist_id": 8, "name": "Dr. Fadi Daher", "email": "fadi.daher@clinic.test", "password": "pass123" },
+        { "therapist_id": 9, "name": "Dr. Lynn Abi Rached", "email": "lynn.abirached@clinic.test", "password": "pass123" },
+        { "therapist_id": 10, "name": "Dr. Sami Karam", "email": "sami.karam@clinic.test", "password": "pass123" },
+        { "therapist_id": 11, "name": "Dr. Dalia Hobeika", "email": "dalia.hobeika@clinic.test", "password": "pass123" },
+        { "therapist_id": 12, "name": "Dr. Tarek Kassis", "email": "tarek.kassis@clinic.test", "password": "pass123" }
+      ]
+    },
+    {
+      "tableName": "MasterTaskTable",
+      "records": [
+        { "task_id": 1, "task_name": "Wrist Flexion Basic", "description": "Slow flex/extend control in a guided range.", "difficulty_default": "easy", "time_limit": 180 },
+        { "task_id": 2, "task_name": "Wrist Pronation/Supination", "description": "Rotate forearm orientation smoothly.", "difficulty_default": "easy", "time_limit": 180 },
+        { "task_id": 3, "task_name": "Grip Squeeze Trainer", "description": "Sustained squeeze with target force windows.", "difficulty_default": "easy", "time_limit": 240 },
+        { "task_id": 4, "task_name": "Precision Pinch", "description": "Pinch and place virtual objects accurately.", "difficulty_default": "medium", "time_limit": 240 },
+        { "task_id": 5, "task_name": "Reach & Hold", "description": "Reach to targets and hold steady for duration.", "difficulty_default": "medium", "time_limit": 300 },
+        { "task_id": 6, "task_name": "Smooth Tracking", "description": "Follow a moving target with minimal jitter.", "difficulty_default": "medium", "time_limit": 300 },
+        { "task_id": 7, "task_name": "Reaction Tap", "description": "Quick tap responses to random cues.", "difficulty_default": "medium", "time_limit": 180 },
+        { "task_id": 8, "task_name": "Strength Ramp", "description": "Increase effort gradually to a target and back down.", "difficulty_default": "hard", "time_limit": 240 },
+        { "task_id": 9, "task_name": "Endurance Hold", "description": "Hold a stable contraction for extended time.", "difficulty_default": "hard", "time_limit": 420 },
+        { "task_id": 10, "task_name": "Object Sorting", "description": "Sort items by size/shape with time pressure.", "difficulty_default": "hard", "time_limit": 360 },
+        { "task_id": 11, "task_name": "Maze Navigate", "description": "Navigate a cursor through a maze without touching edges.", "difficulty_default": "hard", "time_limit": 300 },
+        { "task_id": 12, "task_name": "Fine Motor Dots", "description": "Hit small dots appearing briefly on screen.", "difficulty_default": "hard", "time_limit": 180 },
+        { "task_id": 13, "task_name": "Two-Point Control", "description": "Control two axes simultaneously (e.g., x/y).", "difficulty_default": "hard", "time_limit": 240 },
+        { "task_id": 14, "task_name": "Cooldown Mobility", "description": "Light mobility sequence to reduce stiffness.", "difficulty_default": "easy", "time_limit": 180 },
+        { "task_id": 15, "task_name": "Assessment Baseline", "description": "Short baseline assessment for calibration.", "difficulty_default": "easy", "time_limit": 120 }
+      ]
+    },
+    {
+      "tableName": "Patient",
+      "records": [
+        { "patient_id": 1, "name": "Patient 001", "email": "patient001@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-10", "therapist_id": 1 },
+        { "patient_id": 2, "name": "Patient 002", "email": "patient002@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-11", "therapist_id": 2 },
+        { "patient_id": 3, "name": "Patient 003", "email": "patient003@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-12", "therapist_id": 3 },
+        { "patient_id": 4, "name": "Patient 004", "email": "patient004@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-13", "therapist_id": 4 },
+        { "patient_id": 5, "name": "Patient 005", "email": "patient005@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-14", "therapist_id": 5 },
+        { "patient_id": 6, "name": "Patient 006", "email": "patient006@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-15", "therapist_id": 6 },
+        { "patient_id": 7, "name": "Patient 007", "email": "patient007@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-16", "therapist_id": 7 },
+        { "patient_id": 8, "name": "Patient 008", "email": "patient008@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-17", "therapist_id": 8 },
+        { "patient_id": 9, "name": "Patient 009", "email": "patient009@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-18", "therapist_id": 9 },
+        { "patient_id": 10, "name": "Patient 010", "email": "patient010@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-19", "therapist_id": 10 },
+
+        { "patient_id": 11, "name": "Patient 011", "email": "patient011@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-20", "therapist_id": 11 },
+        { "patient_id": 12, "name": "Patient 012", "email": "patient012@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-21", "therapist_id": 12 },
+        { "patient_id": 13, "name": "Patient 013", "email": "patient013@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-22", "therapist_id": 1 },
+        { "patient_id": 14, "name": "Patient 014", "email": "patient014@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-23", "therapist_id": 2 },
+        { "patient_id": 15, "name": "Patient 015", "email": "patient015@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-24", "therapist_id": 3 },
+        { "patient_id": 16, "name": "Patient 016", "email": "patient016@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-25", "therapist_id": 4 },
+        { "patient_id": 17, "name": "Patient 017", "email": "patient017@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-26", "therapist_id": 5 },
+        { "patient_id": 18, "name": "Patient 018", "email": "patient018@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-27", "therapist_id": 6 },
+        { "patient_id": 19, "name": "Patient 019", "email": "patient019@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-28", "therapist_id": 7 },
+        { "patient_id": 20, "name": "Patient 020", "email": "patient020@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-01-29", "therapist_id": 8 },
+
+        { "patient_id": 21, "name": "Patient 021", "email": "patient021@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-01-30", "therapist_id": 9 },
+        { "patient_id": 22, "name": "Patient 022", "email": "patient022@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-01-31", "therapist_id": 10 },
+        { "patient_id": 23, "name": "Patient 023", "email": "patient023@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-01", "therapist_id": 11 },
+        { "patient_id": 24, "name": "Patient 024", "email": "patient024@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-02", "therapist_id": 12 },
+        { "patient_id": 25, "name": "Patient 025", "email": "patient025@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-03", "therapist_id": 1 },
+        { "patient_id": 26, "name": "Patient 026", "email": "patient026@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-04", "therapist_id": 2 },
+        { "patient_id": 27, "name": "Patient 027", "email": "patient027@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-05", "therapist_id": 3 },
+        { "patient_id": 28, "name": "Patient 028", "email": "patient028@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-06", "therapist_id": 4 },
+        { "patient_id": 29, "name": "Patient 029", "email": "patient029@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-07", "therapist_id": 5 },
+        { "patient_id": 30, "name": "Patient 030", "email": "patient030@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-08", "therapist_id": 6 },
+
+        { "patient_id": 31, "name": "Patient 031", "email": "patient031@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-09", "therapist_id": 7 },
+        { "patient_id": 32, "name": "Patient 032", "email": "patient032@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-10", "therapist_id": 8 },
+        { "patient_id": 33, "name": "Patient 033", "email": "patient033@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-11", "therapist_id": 9 },
+        { "patient_id": 34, "name": "Patient 034", "email": "patient034@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-12", "therapist_id": 10 },
+        { "patient_id": 35, "name": "Patient 035", "email": "patient035@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-13", "therapist_id": 11 },
+        { "patient_id": 36, "name": "Patient 036", "email": "patient036@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-14", "therapist_id": 12 },
+        { "patient_id": 37, "name": "Patient 037", "email": "patient037@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-15", "therapist_id": 1 },
+        { "patient_id": 38, "name": "Patient 038", "email": "patient038@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-16", "therapist_id": 2 },
+        { "patient_id": 39, "name": "Patient 039", "email": "patient039@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-17", "therapist_id": 3 },
+        { "patient_id": 40, "name": "Patient 040", "email": "patient040@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-18", "therapist_id": 4 },
+
+        { "patient_id": 41, "name": "Patient 041", "email": "patient041@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-19", "therapist_id": 5 },
+        { "patient_id": 42, "name": "Patient 042", "email": "patient042@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-20", "therapist_id": 6 },
+        { "patient_id": 43, "name": "Patient 043", "email": "patient043@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-21", "therapist_id": 7 },
+        { "patient_id": 44, "name": "Patient 044", "email": "patient044@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-22", "therapist_id": 8 },
+        { "patient_id": 45, "name": "Patient 045", "email": "patient045@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-23", "therapist_id": 9 },
+        { "patient_id": 46, "name": "Patient 046", "email": "patient046@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-24", "therapist_id": 10 },
+        { "patient_id": 47, "name": "Patient 047", "email": "patient047@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-25", "therapist_id": 11 },
+        { "patient_id": 48, "name": "Patient 048", "email": "patient048@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-02-26", "therapist_id": 12 },
+        { "patient_id": 49, "name": "Patient 049", "email": "patient049@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-02-27", "therapist_id": 1 },
+        { "patient_id": 50, "name": "Patient 050", "email": "patient050@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-02-28", "therapist_id": 2 },
+
+        { "patient_id": 51, "name": "Patient 051", "email": "patient051@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-01", "therapist_id": 3 },
+        { "patient_id": 52, "name": "Patient 052", "email": "patient052@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-02", "therapist_id": 4 },
+        { "patient_id": 53, "name": "Patient 053", "email": "patient053@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-03", "therapist_id": 5 },
+        { "patient_id": 54, "name": "Patient 054", "email": "patient054@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-04", "therapist_id": 6 },
+        { "patient_id": 55, "name": "Patient 055", "email": "patient055@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-05", "therapist_id": 7 },
+        { "patient_id": 56, "name": "Patient 056", "email": "patient056@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-06", "therapist_id": 8 },
+        { "patient_id": 57, "name": "Patient 057", "email": "patient057@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-07", "therapist_id": 9 },
+        { "patient_id": 58, "name": "Patient 058", "email": "patient058@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-08", "therapist_id": 10 },
+        { "patient_id": 59, "name": "Patient 059", "email": "patient059@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-09", "therapist_id": 11 },
+        { "patient_id": 60, "name": "Patient 060", "email": "patient060@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-10", "therapist_id": 12 },
+
+        { "patient_id": 61, "name": "Patient 061", "email": "patient061@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-11", "therapist_id": 1 },
+        { "patient_id": 62, "name": "Patient 062", "email": "patient062@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-12", "therapist_id": 2 },
+        { "patient_id": 63, "name": "Patient 063", "email": "patient063@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-13", "therapist_id": 3 },
+        { "patient_id": 64, "name": "Patient 064", "email": "patient064@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-14", "therapist_id": 4 },
+        { "patient_id": 65, "name": "Patient 065", "email": "patient065@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-15", "therapist_id": 5 },
+        { "patient_id": 66, "name": "Patient 066", "email": "patient066@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-16", "therapist_id": 6 },
+        { "patient_id": 67, "name": "Patient 067", "email": "patient067@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-17", "therapist_id": 7 },
+        { "patient_id": 68, "name": "Patient 068", "email": "patient068@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-18", "therapist_id": 8 },
+        { "patient_id": 69, "name": "Patient 069", "email": "patient069@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-19", "therapist_id": 9 },
+        { "patient_id": 70, "name": "Patient 070", "email": "patient070@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-20", "therapist_id": 10 },
+
+        { "patient_id": 71, "name": "Patient 071", "email": "patient071@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-21", "therapist_id": 11 },
+        { "patient_id": 72, "name": "Patient 072", "email": "patient072@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-22", "therapist_id": 12 },
+        { "patient_id": 73, "name": "Patient 073", "email": "patient073@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-23", "therapist_id": 1 },
+        { "patient_id": 74, "name": "Patient 074", "email": "patient074@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-24", "therapist_id": 2 },
+        { "patient_id": 75, "name": "Patient 075", "email": "patient075@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-25", "therapist_id": 3 },
+        { "patient_id": 76, "name": "Patient 076", "email": "patient076@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-26", "therapist_id": 4 },
+        { "patient_id": 77, "name": "Patient 077", "email": "patient077@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-27", "therapist_id": 5 },
+        { "patient_id": 78, "name": "Patient 078", "email": "patient078@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-28", "therapist_id": 6 },
+        { "patient_id": 79, "name": "Patient 079", "email": "patient079@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-03-29", "therapist_id": 7 },
+        { "patient_id": 80, "name": "Patient 080", "email": "patient080@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-03-30", "therapist_id": 8 },
+
+        { "patient_id": 81, "name": "Patient 081", "email": "patient081@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-03-31", "therapist_id": 9 },
+        { "patient_id": 82, "name": "Patient 082", "email": "patient082@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-01", "therapist_id": 10 },
+        { "patient_id": 83, "name": "Patient 083", "email": "patient083@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-02", "therapist_id": 11 },
+        { "patient_id": 84, "name": "Patient 084", "email": "patient084@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-03", "therapist_id": 12 },
+        { "patient_id": 85, "name": "Patient 085", "email": "patient085@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-04", "therapist_id": 1 },
+        { "patient_id": 86, "name": "Patient 086", "email": "patient086@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-05", "therapist_id": 2 },
+        { "patient_id": 87, "name": "Patient 087", "email": "patient087@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-06", "therapist_id": 3 },
+        { "patient_id": 88, "name": "Patient 088", "email": "patient088@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-07", "therapist_id": 4 },
+        { "patient_id": 89, "name": "Patient 089", "email": "patient089@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-08", "therapist_id": 5 },
+        { "patient_id": 90, "name": "Patient 090", "email": "patient090@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-09", "therapist_id": 6 },
+
+        { "patient_id": 91, "name": "Patient 091", "email": "patient091@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-10", "therapist_id": 7 },
+        { "patient_id": 92, "name": "Patient 092", "email": "patient092@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-11", "therapist_id": 8 },
+        { "patient_id": 93, "name": "Patient 093", "email": "patient093@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-12", "therapist_id": 9 },
+        { "patient_id": 94, "name": "Patient 094", "email": "patient094@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-13", "therapist_id": 10 },
+        { "patient_id": 95, "name": "Patient 095", "email": "patient095@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-14", "therapist_id": 11 },
+        { "patient_id": 96, "name": "Patient 096", "email": "patient096@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-15", "therapist_id": 12 },
+        { "patient_id": 97, "name": "Patient 097", "email": "patient097@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-16", "therapist_id": 1 },
+        { "patient_id": 98, "name": "Patient 098", "email": "patient098@patients.test", "password": "pass123", "amputation_type": "above_elbow", "start_date": "2026-04-17", "therapist_id": 2 },
+        { "patient_id": 99, "name": "Patient 099", "email": "patient099@patients.test", "password": "pass123", "amputation_type": "shoulder", "start_date": "2026-04-18", "therapist_id": 3 },
+        { "patient_id": 100, "name": "Patient 100", "email": "patient100@patients.test", "password": "pass123", "amputation_type": "below_elbow", "start_date": "2026-04-19", "therapist_id": 4 }
+      ]
+    },
+    {
+      "tableName": "PatientTaskAssignment",
+      "records": [
+        { "assignment_id": 1, "order_index": 1, "status": "pending", "assigned_date": "2026-02-01", "completed_date": null, "patient_id": 1, "task_id": 15 },
+        { "assignment_id": 2, "order_index": 1, "status": "pending", "assigned_date": "2026-02-01", "completed_date": null, "patient_id": 2, "task_id": 15 },
+        { "assignment_id": 3, "order_index": 1, "status": "pending", "assigned_date": "2026-02-01", "completed_date": null, "patient_id": 3, "task_id": 15 },
+        { "assignment_id": 4, "order_index": 1, "status": "pending", "assigned_date": "2026-02-01", "completed_date": null, "patient_id": 4, "task_id": 15 },
+        { "assignment_id": 5, "order_index": 1, "status": "pending", "assigned_date": "2026-02-01", "completed_date": null, "patient_id": 5, "task_id": 15 },
+
+        { "assignment_id": 6, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-03", "completed_date": null, "patient_id": 6, "task_id": 1 },
+        { "assignment_id": 7, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-03", "completed_date": null, "patient_id": 7, "task_id": 2 },
+        { "assignment_id": 8, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-03", "completed_date": null, "patient_id": 8, "task_id": 3 },
+        { "assignment_id": 9, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-03", "completed_date": null, "patient_id": 9, "task_id": 4 },
+        { "assignment_id": 10, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-03", "completed_date": null, "patient_id": 10, "task_id": 5 },
+
+        { "assignment_id": 11, "order_index": 3, "status": "completed", "assigned_date": "2026-01-25", "completed_date": "2026-02-02", "patient_id": 11, "task_id": 1 },
+        { "assignment_id": 12, "order_index": 3, "status": "completed", "assigned_date": "2026-01-25", "completed_date": "2026-02-02", "patient_id": 12, "task_id": 2 },
+        { "assignment_id": 13, "order_index": 3, "status": "completed", "assigned_date": "2026-01-25", "completed_date": "2026-02-02", "patient_id": 13, "task_id": 3 },
+        { "assignment_id": 14, "order_index": 3, "status": "completed", "assigned_date": "2026-01-25", "completed_date": "2026-02-02", "patient_id": 14, "task_id": 4 },
+        { "assignment_id": 15, "order_index": 3, "status": "completed", "assigned_date": "2026-01-25", "completed_date": "2026-02-02", "patient_id": 15, "task_id": 5 },
+
+        { "assignment_id": 16, "order_index": 1, "status": "pending", "assigned_date": "2026-02-05", "completed_date": null, "patient_id": 16, "task_id": 6 },
+        { "assignment_id": 17, "order_index": 1, "status": "pending", "assigned_date": "2026-02-05", "completed_date": null, "patient_id": 17, "task_id": 7 },
+        { "assignment_id": 18, "order_index": 1, "status": "pending", "assigned_date": "2026-02-05", "completed_date": null, "patient_id": 18, "task_id": 8 },
+        { "assignment_id": 19, "order_index": 1, "status": "pending", "assigned_date": "2026-02-05", "completed_date": null, "patient_id": 19, "task_id": 9 },
+        { "assignment_id": 20, "order_index": 1, "status": "pending", "assigned_date": "2026-02-05", "completed_date": null, "patient_id": 20, "task_id": 10 },
+
+        { "assignment_id": 21, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-07", "completed_date": null, "patient_id": 21, "task_id": 11 },
+        { "assignment_id": 22, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-07", "completed_date": null, "patient_id": 22, "task_id": 12 },
+        { "assignment_id": 23, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-07", "completed_date": null, "patient_id": 23, "task_id": 13 },
+        { "assignment_id": 24, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-07", "completed_date": null, "patient_id": 24, "task_id": 14 },
+        { "assignment_id": 25, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-07", "completed_date": null, "patient_id": 25, "task_id": 1 },
+
+        { "assignment_id": 26, "order_index": 3, "status": "completed", "assigned_date": "2026-01-28", "completed_date": "2026-02-06", "patient_id": 26, "task_id": 2 },
+        { "assignment_id": 27, "order_index": 3, "status": "completed", "assigned_date": "2026-01-28", "completed_date": "2026-02-06", "patient_id": 27, "task_id": 3 },
+        { "assignment_id": 28, "order_index": 3, "status": "completed", "assigned_date": "2026-01-28", "completed_date": "2026-02-06", "patient_id": 28, "task_id": 4 },
+        { "assignment_id": 29, "order_index": 3, "status": "completed", "assigned_date": "2026-01-28", "completed_date": "2026-02-06", "patient_id": 29, "task_id": 5 },
+        { "assignment_id": 30, "order_index": 3, "status": "completed", "assigned_date": "2026-01-28", "completed_date": "2026-02-06", "patient_id": 30, "task_id": 6 },
+
+        { "assignment_id": 31, "order_index": 1, "status": "pending", "assigned_date": "2026-02-08", "completed_date": null, "patient_id": 31, "task_id": 7 },
+        { "assignment_id": 32, "order_index": 1, "status": "pending", "assigned_date": "2026-02-08", "completed_date": null, "patient_id": 32, "task_id": 8 },
+        { "assignment_id": 33, "order_index": 1, "status": "pending", "assigned_date": "2026-02-08", "completed_date": null, "patient_id": 33, "task_id": 9 },
+        { "assignment_id": 34, "order_index": 1, "status": "pending", "assigned_date": "2026-02-08", "completed_date": null, "patient_id": 34, "task_id": 10 },
+        { "assignment_id": 35, "order_index": 1, "status": "pending", "assigned_date": "2026-02-08", "completed_date": null, "patient_id": 35, "task_id": 11 },
+
+        { "assignment_id": 36, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-09", "completed_date": null, "patient_id": 36, "task_id": 12 },
+        { "assignment_id": 37, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-09", "completed_date": null, "patient_id": 37, "task_id": 13 },
+        { "assignment_id": 38, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-09", "completed_date": null, "patient_id": 38, "task_id": 14 },
+        { "assignment_id": 39, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-09", "completed_date": null, "patient_id": 39, "task_id": 1 },
+        { "assignment_id": 40, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-09", "completed_date": null, "patient_id": 40, "task_id": 2 },
+
+        { "assignment_id": 41, "order_index": 3, "status": "completed", "assigned_date": "2026-01-30", "completed_date": "2026-02-08", "patient_id": 41, "task_id": 3 },
+        { "assignment_id": 42, "order_index": 3, "status": "completed", "assigned_date": "2026-01-30", "completed_date": "2026-02-08", "patient_id": 42, "task_id": 4 },
+        { "assignment_id": 43, "order_index": 3, "status": "completed", "assigned_date": "2026-01-30", "completed_date": "2026-02-08", "patient_id": 43, "task_id": 5 },
+        { "assignment_id": 44, "order_index": 3, "status": "completed", "assigned_date": "2026-01-30", "completed_date": "2026-02-08", "patient_id": 44, "task_id": 6 },
+        { "assignment_id": 45, "order_index": 3, "status": "completed", "assigned_date": "2026-01-30", "completed_date": "2026-02-08", "patient_id": 45, "task_id": 7 },
+
+        { "assignment_id": 46, "order_index": 1, "status": "pending", "assigned_date": "2026-02-10", "completed_date": null, "patient_id": 46, "task_id": 8 },
+        { "assignment_id": 47, "order_index": 1, "status": "pending", "assigned_date": "2026-02-10", "completed_date": null, "patient_id": 47, "task_id": 9 },
+        { "assignment_id": 48, "order_index": 1, "status": "pending", "assigned_date": "2026-02-10", "completed_date": null, "patient_id": 48, "task_id": 10 },
+        { "assignment_id": 49, "order_index": 1, "status": "pending", "assigned_date": "2026-02-10", "completed_date": null, "patient_id": 49, "task_id": 11 },
+        { "assignment_id": 50, "order_index": 1, "status": "pending", "assigned_date": "2026-02-10", "completed_date": null, "patient_id": 50, "task_id": 12 },
+
+        { "assignment_id": 51, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-11", "completed_date": null, "patient_id": 51, "task_id": 13 },
+        { "assignment_id": 52, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-11", "completed_date": null, "patient_id": 52, "task_id": 14 },
+        { "assignment_id": 53, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-11", "completed_date": null, "patient_id": 53, "task_id": 1 },
+        { "assignment_id": 54, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-11", "completed_date": null, "patient_id": 54, "task_id": 2 },
+        { "assignment_id": 55, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-11", "completed_date": null, "patient_id": 55, "task_id": 3 },
+
+        { "assignment_id": 56, "order_index": 3, "status": "completed", "assigned_date": "2026-02-01", "completed_date": "2026-02-09", "patient_id": 56, "task_id": 4 },
+        { "assignment_id": 57, "order_index": 3, "status": "completed", "assigned_date": "2026-02-01", "completed_date": "2026-02-09", "patient_id": 57, "task_id": 5 },
+        { "assignment_id": 58, "order_index": 3, "status": "completed", "assigned_date": "2026-02-01", "completed_date": "2026-02-09", "patient_id": 58, "task_id": 6 },
+        { "assignment_id": 59, "order_index": 3, "status": "completed", "assigned_date": "2026-02-01", "completed_date": "2026-02-09", "patient_id": 59, "task_id": 7 },
+        { "assignment_id": 60, "order_index": 3, "status": "completed", "assigned_date": "2026-02-01", "completed_date": "2026-02-09", "patient_id": 60, "task_id": 8 },
+
+        { "assignment_id": 61, "order_index": 1, "status": "pending", "assigned_date": "2026-02-12", "completed_date": null, "patient_id": 61, "task_id": 9 },
+        { "assignment_id": 62, "order_index": 1, "status": "pending", "assigned_date": "2026-02-12", "completed_date": null, "patient_id": 62, "task_id": 10 },
+        { "assignment_id": 63, "order_index": 1, "status": "pending", "assigned_date": "2026-02-12", "completed_date": null, "patient_id": 63, "task_id": 11 },
+        { "assignment_id": 64, "order_index": 1, "status": "pending", "assigned_date": "2026-02-12", "completed_date": null, "patient_id": 64, "task_id": 12 },
+        { "assignment_id": 65, "order_index": 1, "status": "pending", "assigned_date": "2026-02-12", "completed_date": null, "patient_id": 65, "task_id": 13 },
+
+        { "assignment_id": 66, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-13", "completed_date": null, "patient_id": 66, "task_id": 14 },
+        { "assignment_id": 67, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-13", "completed_date": null, "patient_id": 67, "task_id": 1 },
+        { "assignment_id": 68, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-13", "completed_date": null, "patient_id": 68, "task_id": 2 },
+        { "assignment_id": 69, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-13", "completed_date": null, "patient_id": 69, "task_id": 3 },
+        { "assignment_id": 70, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-13", "completed_date": null, "patient_id": 70, "task_id": 4 },
+
+        { "assignment_id": 71, "order_index": 3, "status": "completed", "assigned_date": "2026-02-03", "completed_date": "2026-02-11", "patient_id": 71, "task_id": 5 },
+        { "assignment_id": 72, "order_index": 3, "status": "completed", "assigned_date": "2026-02-03", "completed_date": "2026-02-11", "patient_id": 72, "task_id": 6 },
+        { "assignment_id": 73, "order_index": 3, "status": "completed", "assigned_date": "2026-02-03", "completed_date": "2026-02-11", "patient_id": 73, "task_id": 7 },
+        { "assignment_id": 74, "order_index": 3, "status": "completed", "assigned_date": "2026-02-03", "completed_date": "2026-02-11", "patient_id": 74, "task_id": 8 },
+        { "assignment_id": 75, "order_index": 3, "status": "completed", "assigned_date": "2026-02-03", "completed_date": "2026-02-11", "patient_id": 75, "task_id": 9 },
+
+        { "assignment_id": 76, "order_index": 1, "status": "pending", "assigned_date": "2026-02-14", "completed_date": null, "patient_id": 76, "task_id": 10 },
+        { "assignment_id": 77, "order_index": 1, "status": "pending", "assigned_date": "2026-02-14", "completed_date": null, "patient_id": 77, "task_id": 11 },
+        { "assignment_id": 78, "order_index": 1, "status": "pending", "assigned_date": "2026-02-14", "completed_date": null, "patient_id": 78, "task_id": 12 },
+        { "assignment_id": 79, "order_index": 1, "status": "pending", "assigned_date": "2026-02-14", "completed_date": null, "patient_id": 79, "task_id": 13 },
+        { "assignment_id": 80, "order_index": 1, "status": "pending", "assigned_date": "2026-02-14", "completed_date": null, "patient_id": 80, "task_id": 14 },
+
+        { "assignment_id": 81, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-15", "completed_date": null, "patient_id": 81, "task_id": 1 },
+        { "assignment_id": 82, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-15", "completed_date": null, "patient_id": 82, "task_id": 2 },
+        { "assignment_id": 83, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-15", "completed_date": null, "patient_id": 83, "task_id": 3 },
+        { "assignment_id": 84, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-15", "completed_date": null, "patient_id": 84, "task_id": 4 },
+        { "assignment_id": 85, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-15", "completed_date": null, "patient_id": 85, "task_id": 5 },
+
+        { "assignment_id": 86, "order_index": 3, "status": "completed", "assigned_date": "2026-02-05", "completed_date": "2026-02-13", "patient_id": 86, "task_id": 6 },
+        { "assignment_id": 87, "order_index": 3, "status": "completed", "assigned_date": "2026-02-05", "completed_date": "2026-02-13", "patient_id": 87, "task_id": 7 },
+        { "assignment_id": 88, "order_index": 3, "status": "completed", "assigned_date": "2026-02-05", "completed_date": "2026-02-13", "patient_id": 88, "task_id": 8 },
+        { "assignment_id": 89, "order_index": 3, "status": "completed", "assigned_date": "2026-02-05", "completed_date": "2026-02-13", "patient_id": 89, "task_id": 9 },
+        { "assignment_id": 90, "order_index": 3, "status": "completed", "assigned_date": "2026-02-05", "completed_date": "2026-02-13", "patient_id": 90, "task_id": 10 },
+
+        { "assignment_id": 91, "order_index": 1, "status": "pending", "assigned_date": "2026-02-16", "completed_date": null, "patient_id": 91, "task_id": 11 },
+        { "assignment_id": 92, "order_index": 1, "status": "pending", "assigned_date": "2026-02-16", "completed_date": null, "patient_id": 92, "task_id": 12 },
+        { "assignment_id": 93, "order_index": 1, "status": "pending", "assigned_date": "2026-02-16", "completed_date": null, "patient_id": 93, "task_id": 13 },
+        { "assignment_id": 94, "order_index": 1, "status": "pending", "assigned_date": "2026-02-16", "completed_date": null, "patient_id": 94, "task_id": 14 },
+        { "assignment_id": 95, "order_index": 1, "status": "pending", "assigned_date": "2026-02-16", "completed_date": null, "patient_id": 95, "task_id": 15 },
+
+        { "assignment_id": 96, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-17", "completed_date": null, "patient_id": 96, "task_id": 1 },
+        { "assignment_id": 97, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-17", "completed_date": null, "patient_id": 97, "task_id": 2 },
+        { "assignment_id": 98, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-17", "completed_date": null, "patient_id": 98, "task_id": 3 },
+        { "assignment_id": 99, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-17", "completed_date": null, "patient_id": 99, "task_id": 4 },
+        { "assignment_id": 100, "order_index": 2, "status": "in_progress", "assigned_date": "2026-02-17", "completed_date": null, "patient_id": 100, "task_id": 5 }
+      ]
+    },
+    {
+      "tableName": "TaskSession",
+      "records": [
+        { "session_id": 1, "completion_percentage": 100, "start_time": "2026-02-01 09:00:00", "end_time": "2026-02-01 09:05:00", "pain_before": 2, "pain_after": 2, "patient_id": 11, "task_id": 1 },
+        { "session_id": 2, "completion_percentage": 95, "start_time": "2026-02-01 09:10:00", "end_time": "2026-02-01 09:15:00", "pain_before": 3, "pain_after": 2, "patient_id": 12, "task_id": 2 },
+        { "session_id": 3, "completion_percentage": 90, "start_time": "2026-02-01 09:20:00", "end_time": "2026-02-01 09:25:00", "pain_before": 2, "pain_after": 2, "patient_id": 13, "task_id": 3 },
+        { "session_id": 4, "completion_percentage": 88, "start_time": "2026-02-01 09:30:00", "end_time": "2026-02-01 09:35:00", "pain_before": 4, "pain_after": 3, "patient_id": 14, "task_id": 4 },
+        { "session_id": 5, "completion_percentage": 92, "start_time": "2026-02-01 09:40:00", "end_time": "2026-02-01 09:46:00", "pain_before": 3, "pain_after": 3, "patient_id": 15, "task_id": 5 },
+
+        { "session_id": 6, "completion_percentage": 40, "start_time": "2026-02-03 10:00:00", "end_time": "2026-02-03 10:06:00", "pain_before": 2, "pain_after": 3, "patient_id": 6, "task_id": 1 },
+        { "session_id": 7, "completion_percentage": 55, "start_time": "2026-02-03 10:10:00", "end_time": "2026-02-03 10:17:00", "pain_before": 1, "pain_after": 2, "patient_id": 7, "task_id": 2 },
+        { "session_id": 8, "completion_percentage": 60, "start_time": "2026-02-03 10:20:00", "end_time": "2026-02-03 10:28:00", "pain_before": 2, "pain_after": 2, "patient_id": 8, "task_id": 3 },
+        { "session_id": 9, "completion_percentage": 35, "start_time": "2026-02-03 10:30:00", "end_time": "2026-02-03 10:36:00", "pain_before": 3, "pain_after": 4, "patient_id": 9, "task_id": 4 },
+        { "session_id": 10, "completion_percentage": 50, "start_time": "2026-02-03 10:40:00", "end_time": "2026-02-03 10:48:00", "pain_before": 2, "pain_after": 3, "patient_id": 10, "task_id": 5 },
+
+        { "session_id": 11, "completion_percentage": 100, "start_time": "2026-02-06 11:00:00", "end_time": "2026-02-06 11:04:00", "pain_before": 2, "pain_after": 2, "patient_id": 26, "task_id": 2 },
+        { "session_id": 12, "completion_percentage": 100, "start_time": "2026-02-06 11:05:00", "end_time": "2026-02-06 11:10:00", "pain_before": 2, "pain_after": 2, "patient_id": 27, "task_id": 3 },
+        { "session_id": 13, "completion_percentage": 100, "start_time": "2026-02-06 11:12:00", "end_time": "2026-02-06 11:18:00", "pain_before": 3, "pain_after": 2, "patient_id": 28, "task_id": 4 },
+        { "session_id": 14, "completion_percentage": 100, "start_time": "2026-02-06 11:20:00", "end_time": "2026-02-06 11:26:00", "pain_before": 2, "pain_after": 2, "patient_id": 29, "task_id": 5 },
+        { "session_id": 15, "completion_percentage": 100, "start_time": "2026-02-06 11:30:00", "end_time": "2026-02-06 11:36:00", "pain_before": 3, "pain_after": 3, "patient_id": 30, "task_id": 6 },
+
+        { "session_id": 16, "completion_percentage": 85, "start_time": "2026-02-08 12:00:00", "end_time": "2026-02-08 12:07:00", "pain_before": 2, "pain_after": 2, "patient_id": 41, "task_id": 3 },
+        { "session_id": 17, "completion_percentage": 90, "start_time": "2026-02-08 12:10:00", "end_time": "2026-02-08 12:17:00", "pain_before": 2, "pain_after": 2, "patient_id": 42, "task_id": 4 },
+        { "session_id": 18, "completion_percentage": 80, "start_time": "2026-02-08 12:20:00", "end_time": "2026-02-08 12:28:00", "pain_before": 3, "pain_after": 3, "patient_id": 43, "task_id": 5 },
+        { "session_id": 19, "completion_percentage": 75, "start_time": "2026-02-08 12:30:00", "end_time": "2026-02-08 12:38:00", "pain_before": 3, "pain_after": 4, "patient_id": 44, "task_id": 6 },
+        { "session_id": 20, "completion_percentage": 88, "start_time": "2026-02-08 12:40:00", "end_time": "2026-02-08 12:48:00", "pain_before": 2, "pain_after": 2, "patient_id": 45, "task_id": 7 },
+
+        { "session_id": 21, "completion_percentage": 65, "start_time": "2026-02-09 09:00:00", "end_time": "2026-02-09 09:06:00", "pain_before": 2, "pain_after": 3, "patient_id": 36, "task_id": 12 },
+        { "session_id": 22, "completion_percentage": 70, "start_time": "2026-02-09 09:10:00", "end_time": "2026-02-09 09:18:00", "pain_before": 2, "pain_after": 2, "patient_id": 37, "task_id": 13 },
+        { "session_id": 23, "completion_percentage": 60, "start_time": "2026-02-09 09:20:00", "end_time": "2026-02-09 09:27:00", "pain_before": 3, "pain_after": 3, "patient_id": 38, "task_id": 14 },
+        { "session_id": 24, "completion_percentage": 55, "start_time": "2026-02-09 09:30:00", "end_time": "2026-02-09 09:37:00", "pain_before": 3, "pain_after": 4, "patient_id": 39, "task_id": 1 },
+        { "session_id": 25, "completion_percentage": 75, "start_time": "2026-02-09 09:40:00", "end_time": "2026-02-09 09:48:00", "pain_before": 2, "pain_after": 2, "patient_id": 40, "task_id": 2 },
+
+        { "session_id": 26, "completion_percentage": 100, "start_time": "2026-02-11 10:00:00", "end_time": "2026-02-11 10:04:00", "pain_before": 2, "pain_after": 2, "patient_id": 56, "task_id": 4 },
+        { "session_id": 27, "completion_percentage": 100, "start_time": "2026-02-11 10:06:00", "end_time": "2026-02-11 10:12:00", "pain_before": 3, "pain_after": 2, "patient_id": 57, "task_id": 5 },
+        { "session_id": 28, "completion_percentage": 100, "start_time": "2026-02-11 10:15:00", "end_time": "2026-02-11 10:22:00", "pain_before": 2, "pain_after": 2, "patient_id": 58, "task_id": 6 },
+        { "session_id": 29, "completion_percentage": 100, "start_time": "2026-02-11 10:25:00", "end_time": "2026-02-11 10:31:00", "pain_before": 3, "pain_after": 3, "patient_id": 59, "task_id": 7 },
+        { "session_id": 30, "completion_percentage": 100, "start_time": "2026-02-11 10:33:00", "end_time": "2026-02-11 10:40:00", "pain_before": 2, "pain_after": 2, "patient_id": 60, "task_id": 8 },
+
+        { "session_id": 31, "completion_percentage": 72, "start_time": "2026-02-13 13:00:00", "end_time": "2026-02-13 13:08:00", "pain_before": 3, "pain_after": 3, "patient_id": 66, "task_id": 14 },
+        { "session_id": 32, "completion_percentage": 68, "start_time": "2026-02-13 13:10:00", "end_time": "2026-02-13 13:17:00", "pain_before": 2, "pain_after": 3, "patient_id": 67, "task_id": 1 },
+        { "session_id": 33, "completion_percentage": 70, "start_time": "2026-02-13 13:20:00", "end_time": "2026-02-13 13:28:00", "pain_before": 2, "pain_after": 2, "patient_id": 68, "task_id": 2 },
+        { "session_id": 34, "completion_percentage": 66, "start_time": "2026-02-13 13:30:00", "end_time": "2026-02-13 13:38:00", "pain_before": 3, "pain_after": 4, "patient_id": 69, "task_id": 3 },
+        { "session_id": 35, "completion_percentage": 74, "start_time": "2026-02-13 13:40:00", "end_time": "2026-02-13 13:48:00", "pain_before": 2, "pain_after": 2, "patient_id": 70, "task_id": 4 },
+
+        { "session_id": 36, "completion_percentage": 100, "start_time": "2026-02-13 14:00:00", "end_time": "2026-02-13 14:07:00", "pain_before": 2, "pain_after": 2, "patient_id": 86, "task_id": 6 },
+        { "session_id": 37, "completion_percentage": 100, "start_time": "2026-02-13 14:10:00", "end_time": "2026-02-13 14:16:00", "pain_before": 2, "pain_after": 2, "patient_id": 87, "task_id": 7 },
+        { "session_id": 38, "completion_percentage": 100, "start_time": "2026-02-13 14:20:00", "end_time": "2026-02-13 14:27:00", "pain_before": 3, "pain_after": 2, "patient_id": 88, "task_id": 8 },
+        { "session_id": 39, "completion_percentage": 100, "start_time": "2026-02-13 14:30:00", "end_time": "2026-02-13 14:36:00", "pain_before": 3, "pain_after": 3, "patient_id": 89, "task_id": 9 },
+        { "session_id": 40, "completion_percentage": 100, "start_time": "2026-02-13 14:40:00", "end_time": "2026-02-13 14:48:00", "pain_before": 2, "pain_after": 2, "patient_id": 90, "task_id": 10 }
+      ]
+    },
+    {
+      "tableName": "VideoRecording",
+      "records": [
+        {
+          "recording_id": 1,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          "recorded_at": "2026-02-03 10:06:30",
+          "session_id": 6
+        },
+        {
+          "recording_id": 2,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+          "recorded_at": "2026-02-03 10:17:30",
+          "session_id": 7
+        },
+        {
+          "recording_id": 3,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+          "recorded_at": "2026-02-03 10:28:30",
+          "session_id": 8
+        },
+        {
+          "recording_id": 4,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+          "recorded_at": "2026-02-03 10:36:30",
+          "session_id": 9
+        },
+        {
+          "recording_id": 5,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+          "recorded_at": "2026-02-03 10:48:30",
+          "session_id": 10
+        },
+        {
+          "recording_id": 6,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+          "recorded_at": "2026-02-08 12:07:30",
+          "session_id": 16
+        },
+        {
+          "recording_id": 7,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+          "recorded_at": "2026-02-08 12:17:30",
+          "session_id": 17
+        },
+        {
+          "recording_id": 8,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+          "recorded_at": "2026-02-08 12:28:30",
+          "session_id": 18
+        },
+        {
+          "recording_id": 9,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+          "recorded_at": "2026-02-08 12:38:30",
+          "session_id": 19
+        },
+        {
+          "recording_id": 10,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+          "recorded_at": "2026-02-08 12:48:30",
+          "session_id": 20
+        },
+        {
+          "recording_id": 11,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          "recorded_at": "2026-02-09 09:06:30",
+          "session_id": 21
+        },
+        {
+          "recording_id": 12,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+          "recorded_at": "2026-02-09 09:18:30",
+          "session_id": 22
+        },
+        {
+          "recording_id": 13,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+          "recorded_at": "2026-02-09 09:27:30",
+          "session_id": 23
+        },
+        {
+          "recording_id": 14,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+          "recorded_at": "2026-02-09 09:37:30",
+          "session_id": 24
+        },
+        {
+          "recording_id": 15,
+          "video_path": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+          "recorded_at": "2026-02-09 09:48:30",
+          "session_id": 25
+        }
+      ]
+    },
+    {
+      "tableName": "Achievements",
+      "records": [
+        { "achievement_id": 1, "title": "First Session Completed", "description": "Completed the first recorded session.", "earned_date": "2026-02-01 09:06:00", "patient_id": 11 },
+        { "achievement_id": 2, "title": "Consistency Streak (3)", "description": "Completed 3 sessions in a week.", "earned_date": "2026-02-08 12:10:00", "patient_id": 42 },
+        { "achievement_id": 3, "title": "Pain Reduced", "description": "Pain after session lower than before.", "earned_date": "2026-02-01 09:16:00", "patient_id": 12 },
+        { "achievement_id": 4, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-06 11:06:00", "patient_id": 26 },
+        { "achievement_id": 5, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-06 11:12:00", "patient_id": 27 },
+        { "achievement_id": 6, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-06 11:18:00", "patient_id": 28 },
+        { "achievement_id": 7, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-06 11:26:00", "patient_id": 29 },
+        { "achievement_id": 8, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-06 11:36:00", "patient_id": 30 },
+
+        { "achievement_id": 9, "title": "Good Progress", "description": "Reached 80%+ completion.", "earned_date": "2026-02-08 12:08:00", "patient_id": 41 },
+        { "achievement_id": 10, "title": "Good Progress", "description": "Reached 80%+ completion.", "earned_date": "2026-02-08 12:18:00", "patient_id": 42 },
+        { "achievement_id": 11, "title": "Good Progress", "description": "Reached 80%+ completion.", "earned_date": "2026-02-08 12:29:00", "patient_id": 43 },
+        { "achievement_id": 12, "title": "Good Progress", "description": "Reached 80%+ completion.", "earned_date": "2026-02-08 12:49:00", "patient_id": 45 },
+
+        { "achievement_id": 13, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-11 10:05:00", "patient_id": 56 },
+        { "achievement_id": 14, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-11 10:13:00", "patient_id": 57 },
+        { "achievement_id": 15, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-11 10:22:00", "patient_id": 58 },
+        { "achievement_id": 16, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-11 10:32:00", "patient_id": 59 },
+        { "achievement_id": 17, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-11 10:41:00", "patient_id": 60 },
+
+        { "achievement_id": 18, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-13 14:08:00", "patient_id": 86 },
+        { "achievement_id": 19, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-13 14:17:00", "patient_id": 87 },
+        { "achievement_id": 20, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-13 14:28:00", "patient_id": 88 },
+        { "achievement_id": 21, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-13 14:37:00", "patient_id": 89 },
+        { "achievement_id": 22, "title": "Perfect Score", "description": "Reached 100% completion.", "earned_date": "2026-02-13 14:49:00", "patient_id": 90 },
+
+        { "achievement_id": 23, "title": "Baseline Done", "description": "Completed baseline assessment task.", "earned_date": "2026-02-01 09:05:00", "patient_id": 11 },
+        { "achievement_id": 24, "title": "Baseline Done", "description": "Completed baseline assessment task.", "earned_date": "2026-02-01 09:15:00", "patient_id": 12 },
+        { "achievement_id": 25, "title": "Baseline Done", "description": "Completed baseline assessment task.", "earned_date": "2026-02-01 09:25:00", "patient_id": 13 }
+      ]
+    },
+    {
+      "tableName": "3D_ARM",
+      "records": [
+        { "arm_id": 1, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 1 },
+        { "arm_id": 2, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 2 },
+        { "arm_id": 3, "Female_arm": 0, "Mascul_ar": 1, "Curl": 1, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 1, "patient_id": 3 },
+        { "arm_id": 4, "Female_arm": 1, "Mascul_ar": 0, "Curl": 0, "Spread": 1, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 4 },
+        { "arm_id": 5, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 0, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 1, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 5 },
+
+        { "arm_id": 6, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 1, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 1, "patient_id": 6 },
+        { "arm_id": 7, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 7 },
+        { "arm_id": 8, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 8 },
+        { "arm_id": 9, "Female_arm": 0, "Mascul_ar": 1, "Curl": 1, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 1, "Arm_Hairs": 1, "Corrective": 1, "patient_id": 9 },
+        { "arm_id": 10, "Female_arm": 1, "Mascul_ar": 0, "Curl": 0, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 10 },
+
+        { "arm_id": 11, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 11 },
+        { "arm_id": 12, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 12 },
+        { "arm_id": 13, "Female_arm": 0, "Mascul_ar": 1, "Curl": 1, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 1, "patient_id": 13 },
+        { "arm_id": 14, "Female_arm": 1, "Mascul_ar": 0, "Curl": 0, "Spread": 1, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 14 },
+        { "arm_id": 15, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 0, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 1, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 15 },
+
+        { "arm_id": 16, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 1, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 1, "patient_id": 16 },
+        { "arm_id": 17, "Female_arm": 0, "Mascul_ar": 1, "Curl": 0, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 1, "Corrective": 0, "patient_id": 17 },
+        { "arm_id": 18, "Female_arm": 1, "Mascul_ar": 0, "Curl": 1, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 0, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 18 },
+        { "arm_id": 19, "Female_arm": 0, "Mascul_ar": 1, "Curl": 1, "Spread": 1, "Male_skin": 1, "Female_skin": 0, "Dark_skin": 0, "Old_skin": 1, "Arm_Hairs": 1, "Corrective": 1, "patient_id": 19 },
+        { "arm_id": 20, "Female_arm": 1, "Mascul_ar": 0, "Curl": 0, "Spread": 0, "Male_skin": 0, "Female_skin": 1, "Dark_skin": 1, "Old_skin": 0, "Arm_Hairs": 0, "Corrective": 0, "patient_id": 20 }
+      ]
+    },
+    {
+      "tableName": "TherapistNotes",
+      "records": [
+        { "note_id": 1, "note_text": "Baseline scheduled; focus on comfort and calibration.", "timestamp": "2026-02-01 08:30:00", "patient_id": 1, "therapist_id": 1 },
+        { "note_id": 2, "note_text": "Reported mild soreness; keep intensity low.", "timestamp": "2026-02-03 09:30:00", "patient_id": 6, "therapist_id": 6 },
+        { "note_id": 3, "note_text": "Good compliance; increase difficulty gradually.", "timestamp": "2026-02-06 12:00:00", "patient_id": 26, "therapist_id": 2 },
+        { "note_id": 4, "note_text": "Pain spike noted; add longer warmup and cooldown.", "timestamp": "2026-02-08 13:10:00", "patient_id": 44, "therapist_id": 8 },
+        { "note_id": 5, "note_text": "Excellent session completion; maintain schedule.", "timestamp": "2026-02-11 11:00:00", "patient_id": 60, "therapist_id": 12 },
+        { "note_id": 6, "note_text": "Technique improving; reduce jitter with slower reps.", "timestamp": "2026-02-13 15:10:00", "patient_id": 69, "therapist_id": 9 },
+        { "note_id": 7, "note_text": "Completed tasks with minimal pain; consider harder tasks.", "timestamp": "2026-02-13 15:20:00", "patient_id": 90, "therapist_id": 6 }
+      ]
+    }
+  ]
+}

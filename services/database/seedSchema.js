@@ -1,13 +1,51 @@
-import { pool } from "./database_connector.js";
+import { pool } from "./databaseService.js";
 
 const conn = await pool.getConnection();
 
-async function seedSchema() {
+const expectedTables = [
+  "VideoRecording",
+  "TaskSession",
+  "PatientTaskAssignment",
+  "Achievements",
+  "3D_ARM",
+  "TherapistNotes",
+  "MasterTaskTable",
+  "Patient",
+  "Therapist"
+];
+
+// Function to check if any expected table is missing
+async function checkMissingTables() {
+  const missingTables = [];
+
+  for (const table of expectedTables) {
+    const [rows] = await conn.execute(`SHOW TABLES LIKE '${table}'`);
+
+    if (rows.length === 0) {
+      missingTables.push(table);
+    }
+  }
+
+  return missingTables;
+}
+
+export async function seedSchema() {
   const q = async (sql) => conn.execute(sql);
+
+  // Check for missing tables first
+  const missing = await checkMissingTables();
+
+  if (missing.length === 0) {
+    console.log("All tables exist. No need to drop or recreate.");
+    return;
+  } else {
+    console.log("Missing tables detected:", missing);
+    console.log("Dropping and recreating all tables...");
+  }
 
   await q(`SET FOREIGN_KEY_CHECKS = 0`);
 
-  // Drop in safe order (quoted because of special chars)
+  // Drop tables safely
   await q(`DROP TABLE IF EXISTS \`VideoRecording\``);
   await q(`DROP TABLE IF EXISTS \`TaskSession\``);
   await q(`DROP TABLE IF EXISTS \`PatientTaskAssignment\``);
@@ -20,6 +58,7 @@ async function seedSchema() {
 
   await q(`SET FOREIGN_KEY_CHECKS = 1`);
 
+  // Then create all tables exactly as in your original script
   // Therapist
   await q(`
     CREATE TABLE \`Therapist\` (
@@ -43,6 +82,7 @@ async function seedSchema() {
       \`start_date\` DATE NULL,
       \`therapist_id\` INT NULL,
       PRIMARY KEY (\`patient_id\`),
+      UNIQUE KEY \`uq_patient_email\` (\`email\`),
       KEY \`idx_patient_therapist\` (\`therapist_id\`),
       CONSTRAINT \`fk_patient_therapist\`
         FOREIGN KEY (\`therapist_id\`) REFERENCES \`Therapist\`(\`therapist_id\`)
@@ -50,7 +90,7 @@ async function seedSchema() {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `);
 
-  // MasterTaskTable
+ // MasterTaskTable
   await q(`
     CREATE TABLE \`MasterTaskTable\` (
       \`task_id\` INT NOT NULL AUTO_INCREMENT,
@@ -58,7 +98,8 @@ async function seedSchema() {
       \`description\` TEXT NULL,
       \`difficulty_default\` VARCHAR(255) NULL,
       \`time_limit\` INT NULL,
-      PRIMARY KEY (\`task_id\`)
+      PRIMARY KEY (\`task_id\`),
+      UNIQUE KEY \`uq_task_name\` (\`task_name\`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   `);
 
@@ -183,4 +224,6 @@ async function seedSchema() {
   `);
 }
 
-await seedSchema();
+
+
+conn.release();
