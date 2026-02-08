@@ -1,4 +1,4 @@
-import { pool } from "./database_connector.js";
+import { pool } from "./databaseConnector.js";
 
 const conn = await pool.getConnection();
 

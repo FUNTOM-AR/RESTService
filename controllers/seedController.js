@@ -1,4 +1,4 @@
-import { seedDatabase } from "../services/database/seed_data.js";
+import { seedDatabase } from "../services/database/seedData.js";
 
 export const seedTables = async (req, res) => {
   try {

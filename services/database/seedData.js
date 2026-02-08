@@ -1,5 +1,5 @@
 import fs from "fs";
-import { pool } from "./database_connector.js";
+import { pool } from "./databaseConnector.js";
 
 export async function seedDatabase()  {
   const data = JSON.parse(fs.readFileSync("./seed_data.json"));
