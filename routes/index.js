@@ -12,7 +12,7 @@ import therapistNotesRoutes from "./therapistNotesRoutes.js";
 import seedRoutes from "./seedRoutes.js";
 
 const router = express.Router();
-router.use("/databse", seedRoutes);
+router.use("/database", seedRoutes);
 router.use("/therapists", therapistRoutes);
 router.use("/patients", patientRoutes);
 router.use("/masterTaskTable", masterTaskTableRoutes);

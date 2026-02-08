@@ -1,7 +1,7 @@
 import fs from "fs";
 import { pool } from "./database_connector.js";
 
-export async function seedTables()  {
+export async function seedDatabase()  {
   const data = JSON.parse(fs.readFileSync("./seed_data.json"));
   const conn = await pool.getConnection();
   const q = (sql, params = []) => conn.execute(sql, params);
