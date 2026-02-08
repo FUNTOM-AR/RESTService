@@ -1,11 +1,13 @@
 import express from "express";
 import routes from "./routes/index.js";
 import dotenv from "dotenv";
+import { seedSchema } from "./services/database/seedSchema.js";
 
 dotenv.config();
 
-if (process.env.USE_SEED === "true") {
-  await import("./services/database/seedSchema.js");
+// Only seed if allowed
+if (process.env.ALLOW_SEED_SCHEMA === "true") {
+  await seedSchema();
 }
 
 const app = express();
