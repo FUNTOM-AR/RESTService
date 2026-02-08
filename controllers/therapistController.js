@@ -11,9 +11,9 @@ export async function getTherapists(req,res){
 
 export async function createTherapist(req, res) {
   try {
-    const { name } = req.body;
+    const { name, user_id} = req.body;
     const [result] = await pool.query(
-      "INSERT INTO Therapist (name) VALUES (?,?,?)",
+      "INSERT INTO Therapist (name , user_id) VALUES (?,?)",
       [name]
     );
 
@@ -31,9 +31,9 @@ export async function createTherapist(req, res) {
 
 export async function updateTherapist(req, res) {
   try {
-    const { name} = req.body;
+    const {name,user_id} = req.body;
 
-    const picked = { name};
+    const picked = { name,user_id};
     const cleaned = Object.fromEntries(
       Object.entries(picked).filter(([, v]) => v !== undefined)
     );

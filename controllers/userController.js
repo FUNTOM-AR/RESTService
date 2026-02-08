@@ -1,6 +1,5 @@
 import { pool } from "../services/database/databaseService.js";
 
-
 // --- User CRUD ---
 export async function getUsers(req, res) {
   try {
