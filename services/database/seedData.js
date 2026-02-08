@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import { pool } from "./databaseService.js";
 
 async function readSeedJson() {
-  const raw = await fs.readFile("./seedData.json", "utf8");
+  const raw = await fs.readFile("./services/database/seedData.json", "utf8");
   const json = JSON.parse(raw);
 
   if (!Array.isArray(json.seedTables) || !Array.isArray(json.seedData)) {
