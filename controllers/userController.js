@@ -10,10 +10,9 @@ export async function getUsers(req, res) {
     res.status(500).json({ message: "Failed to get users", error: err.message });
   }
 }
-
-export async function createUser(req, res) {
+export async function createUser(req, res, next) {
   try {
-    const { email, password, role } = req.body; // include role
+    const { email, password, role } = req.body;
 
     if (!role || !["patient", "therapist"].includes(role)) {
       return res.status(400).json({ message: "Invalid or missing role" });
@@ -29,13 +28,15 @@ export async function createUser(req, res) {
       [result.insertId]
     );
 
-    const token = generateToken(user);
-    res.status(201).json({ ...user, token });
+    req.user = user; // pass to next middleware
+    next();
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Failed to create user", error: err.message });
   }
 }
+
+
 
 export async function updateUser(req, res) {
   try {
