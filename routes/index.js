@@ -11,8 +11,10 @@ import arm3DRoutes from "./arm3DRoutes.js";
 import therapistNotesRoutes from "./therapistNotesRoutes.js";
 import seedRoutes from "./seedRoutes.js";
 import userRoutes from "./userRoutes.js"
+import authRoutes from "./authrRoutes.js"
 
 const router = express.Router();
+router.use("/auth",authRoutes)
 router.use("/user",userRoutes)
 router.use("/database", seedRoutes);
 router.use("/therapists", therapistRoutes);

@@ -62,13 +62,14 @@ export async function seedSchema() {
 
 // User table
 await q(`
-  CREATE TABLE \`User\` (
-    \`user_id\` INT NOT NULL AUTO_INCREMENT,
-    \`email\` VARCHAR(255) NOT NULL,
-    \`password\` VARCHAR(255) NOT NULL,
-    PRIMARY KEY (\`user_id\`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
-`);
+CREATE TABLE \`User\` (
+  \`user_id\` INT NOT NULL AUTO_INCREMENT,
+  \`email\` VARCHAR(255) NOT NULL,
+  \`password\` VARCHAR(255) NOT NULL,
+  \`role\` ENUM('patient','therapist') NOT NULL,
+  PRIMARY KEY (\`user_id\`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;`
+);
 
 // Therapist table (linked to User)
 await q(`

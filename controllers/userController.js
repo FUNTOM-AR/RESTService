@@ -13,10 +13,15 @@ export async function getUsers(req, res) {
 
 export async function createUser(req, res) {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body; // include role
+
+    if (!role || !["patient", "therapist"].includes(role)) {
+      return res.status(400).json({ message: "Invalid or missing role" });
+    }
+
     const [result] = await pool.query(
-      "INSERT INTO User (email, password) VALUES (?, ?)",
-      [email, password]
+      "INSERT INTO User (email, password, role) VALUES (?, ?, ?)",
+      [email, password, role]
     );
 
     const [[user]] = await pool.query(
@@ -34,10 +39,18 @@ export async function createUser(req, res) {
 
 export async function updateUser(req, res) {
   try {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
 
-    const picked = { email, password };
-    const cleaned = Object.fromEntries(Object.entries(picked).filter(([, v]) => v !== undefined));
+    const picked = { email, password, role };
+    const cleaned = Object.fromEntries(
+      Object.entries(picked).filter(
+        ([, v]) => v !== undefined && (v !== "" || v !== null)
+      )
+    );
+
+    if (cleaned.role && !["patient", "therapist"].includes(cleaned.role)) {
+      return res.status(400).json({ message: "Invalid role value" });
+    }
 
     if (Object.keys(cleaned).length === 0) {
       return res.status(400).json({ message: "No fields provided to update" });
